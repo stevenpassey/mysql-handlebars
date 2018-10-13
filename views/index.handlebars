@@ -1,0 +1,25 @@
+<div id="created-burgers-list">
+	<div class="title">Created Burgers</div>
+	<ul>
+		{{#each burger}}
+			{{#unless devoured}}
+				<li>
+					<span id="b_name">{{burger_name}}</span> <button onClick='eatThisBurger({{id}})'">Eat!</button>
+				</li>
+			{{/unless}}
+		{{/each}}
+	</ul>
+</div>
+
+<div id="eaten-burgers-list">
+	<div class="title">Eaten Burgers</div>
+	<ul>
+        {{#each burger}}
+            {{#if devoured}}
+                <li>
+                    <span id="b_name">{{burger_name}}</span> <button onClick='deleteThisBurger({{id}})'">Delete</button>
+                </li>
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>
